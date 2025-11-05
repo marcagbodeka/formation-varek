@@ -122,7 +122,7 @@ export default function Video() {
         <div style={{ width: "40px" }}></div>
       </header>
 
-      <main className="container py-4">
+      <main className="container py-4 scroll-both">
         {/* Lecteur vidéo */}
         <section className="mb-5">
           <div className="video-player position-relative rounded-4 shadow-sm mx-auto overflow-hidden">

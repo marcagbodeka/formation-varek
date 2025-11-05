@@ -191,7 +191,7 @@ export default function AdminDashboard() {
     <div className="bg-page min-vh-100">
       {/* Barre supérieure */}
       <header className="bg-white shadow-sm py-3 px-4 border-bottom d-flex justify-content-between align-items-center">
-        <h5 className="fw-bold text-primary mb-0">Espace Administrateur</h5>
+        <h5 className="fw-bold text-primary mb-0 d-none d-sm-block">Espace Administrateur</h5>
         <div className="d-flex gap-2">
           <button className="btn btn-outline-secondary btn-sm" onClick={() => navigate("/formations")}>
             Voir Formations
@@ -206,7 +206,7 @@ export default function AdminDashboard() {
       </header>
 
       {/* Section Formations: Création / Édition */}
-      <div className="container py-4">
+      <div className="container py-4 scroll-both">
         {tempAdminCreds && (
           <div className="alert alert-warning d-flex justify-content-between align-items-center" role="alert">
             <div>
@@ -232,7 +232,7 @@ export default function AdminDashboard() {
             </div>
           </div>
         )}
-        <div className="card shadow-sm rounded-4 p-4 mb-4">
+        <div className="card shadow-sm rounded-4 p-4 mb-4 scroll-both">
           <div className="d-flex justify-content-between align-items-center mb-3">
             <h5 className="fw-bold mb-0">{editingFormationId ? "Modifier la formation" : "Créer une formation"}</h5>
             {editingFormationId && (
@@ -279,7 +279,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Liste des formations */}
-        <div className="card shadow-sm rounded-4 p-4">
+        <div className="card shadow-sm rounded-4 p-4 scroll-both">
           <h5 className="fw-bold mb-3">Formations existantes</h5>
           {formationLoading ? (
             <div className="text-muted">Chargement...</div>
@@ -402,7 +402,7 @@ export default function AdminDashboard() {
       )}
 
       {/* Tableau */}
-      <main className="container py-5">
+      <main className="container py-5 scroll-both">
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h4 className="fw-bold">Utilisateurs</h4>
           <div className="d-flex align-items-center gap-2">
@@ -436,7 +436,7 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="table-responsive shadow-sm rounded-4 bg-white p-3">
+        <div className="table-responsive shadow-sm rounded-4 bg-white p-3 scroll-both">
           <table className="table align-middle">
             <thead>
               <tr>

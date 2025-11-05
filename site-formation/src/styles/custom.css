@@ -225,3 +225,17 @@ body {
     box-shadow: none;
   }
   
+  /* ==================== SCROLL HELPERS ==================== */
+  .scroll-both {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .scroll-x {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .scroll-y {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  

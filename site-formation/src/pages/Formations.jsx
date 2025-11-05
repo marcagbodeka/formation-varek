@@ -65,7 +65,7 @@ export default function Formations() {
       </header>
 
       {/* Barre de recherche */}
-      <section className="px-4 py-3">
+      <section className="px-4 py-3 scroll-both">
         <div className="search-bar-container shadow-sm d-flex align-items-center px-3 py-2 bg-white rounded-pill">
           <span className="material-symbols-outlined text-muted me-2">
             search
@@ -84,7 +84,7 @@ export default function Formations() {
       <h2 className="fw-bold fs-5 px-4 mb-3">Mes Formations</h2>
 
       {/* Liste des formations */}
-      <main className="px-4 pb-5">
+      <main className="px-4 pb-5 scroll-both">
         {filteredFormations.length === 0 ? (
           <div className="text-center py-5">
             <p className="text-muted">
