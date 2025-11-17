@@ -170,12 +170,66 @@ export default function AdminDashboard() {
   };
 
   const countryCodes = {
-    TG: "Togo",
-    BJ: "Bénin",
-    CI: "Côte d'Ivoire",
-    SN: "Sénégal",
-    // Ajoutez d'autres pays si nécessaire
+    DZ: { name: "Algérie", code: "+213" },
+    AO: { name: "Angola", code: "+244" },
+    BJ: { name: "Bénin", code: "+229" },
+    BW: { name: "Botswana", code: "+267" },
+    BF: { name: "Burkina Faso", code: "+226" },
+    BI: { name: "Burundi", code: "+257" },
+    CM: { name: "Cameroun", code: "+237" },
+    CV: { name: "Cap-Vert", code: "+238" },
+    CF: { name: "Centrafrique", code: "+236" },
+    TD: { name: "Tchad", code: "+235" },
+    KM: { name: "Comores", code: "+269" },
+    CG: { name: "Congo", code: "+242" },
+    CD: { name: "Congo (RDC)", code: "+243" },
+    CI: { name: "Côte d’Ivoire", code: "+225" },
+    DJ: { name: "Djibouti", code: "+253" },
+    EG: { name: "Égypte", code: "+20" },
+    GQ: { name: "Guinée Équatoriale", code: "+240" },
+    ER: { name: "Érythrée", code: "+291" },
+    SZ: { name: "Eswatini", code: "+268" },
+    ET: { name: "Éthiopie", code: "+251" },
+    GA: { name: "Gabon", code: "+241" },
+    GM: { name: "Gambie", code: "+220" },
+    GH: { name: "Ghana", code: "+233" },
+    GN: { name: "Guinée", code: "+224" },
+    GW: { name: "Guinée-Bissau", code: "+245" },
+    KE: { name: "Kenya", code: "+254" },
+    LS: { name: "Lesotho", code: "+266" },
+    LR: { name: "Liberia", code: "+231" },
+    LY: { name: "Libye", code: "+218" },
+    MG: { name: "Madagascar", code: "+261" },
+    MW: { name: "Malawi", code: "+265" },
+    ML: { name: "Mali", code: "+223" },
+    MR: { name: "Mauritanie", code: "+222" },
+    MU: { name: "Maurice", code: "+230" },
+    MA: { name: "Maroc", code: "+212" },
+    MZ: { name: "Mozambique", code: "+258" },
+    NA: { name: "Namibie", code: "+264" },
+    NE: { name: "Niger", code: "+227" },
+    NG: { name: "Nigeria", code: "+234" },
+    RW: { name: "Rwanda", code: "+250" },
+    ST: { name: "Sao Tomé-et-Principe", code: "+239" },
+    SN: { name: "Sénégal", code: "+221" },
+    SC: { name: "Seychelles", code: "+248" },
+    SL: { name: "Sierra Leone", code: "+232" },
+    SO: { name: "Somalie", code: "+252" },
+    ZA: { name: "Afrique du Sud", code: "+27" },
+    SS: { name: "Soudan du Sud", code: "+211" },
+    SD: { name: "Soudan", code: "+249" },
+    TZ: { name: "Tanzanie", code: "+255" },
+    TG: { name: "Togo", code: "+228" },
+    TN: { name: "Tunisie", code: "+216" },
+    UG: { name: "Ouganda", code: "+256" },
+    ZM: { name: "Zambie", code: "+260" },
+    ZW: { name: "Zimbabwe", code: "+263" },
+    EH: { name: "Sahara Occidental", code: "+212" },
+    RE: { name: "La Réunion", code: "+262" },
+    YT: { name: "Mayotte", code: "+262" },
   };
+
+  const getCountryName = (code) => countryCodes[code]?.name || code;
 
   if (loading) {
     return (
@@ -352,9 +406,9 @@ export default function AdminDashboard() {
                   value={formData.country}
                   onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                 >
-                  {Object.entries(countryCodes).map(([code, name]) => (
+                  {Object.entries(countryCodes).map(([code, data]) => (
                     <option key={code} value={code}>
-                      {name}
+                      {data.name}
                     </option>
                   ))}
                 </select>
@@ -472,7 +526,7 @@ export default function AdminDashboard() {
                       </span>
                     </td>
                     <td>{u.phone}</td>
-                    <td>{u.country}</td>
+                    <td>{getCountryName(u.country)}</td>
                     <td>
                       <div className="d-flex align-items-center gap-2">
                         <code className="user-select-all">{u.accessCode}</code>
